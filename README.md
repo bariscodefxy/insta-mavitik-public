@@ -1,9 +1,9 @@
-# insta-telif
-Instagram Account Pishing Tool via Copyright
+# insta-mavitik
+Instagram Account Pishing Tool via Verify Badge
 
 |Project Name|Author|Current Version|Minimum PHP Version|
 |--|--|--|--|
-|insta-telif|bariscodefxy|v1.0.11-r1bc|7.4|
+|insta-mavitik|bariscodefxy|v1.0.11-r1bc|7.4|
 
 |Snapshot|
 |--|
