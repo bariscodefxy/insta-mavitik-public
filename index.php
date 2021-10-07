@@ -1,5 +1,6 @@
 <?php
 
+error_reporting(0);
 set_time_limit(0);
 date_default_timezone_set("Europe/Istanbul");
 
@@ -21,9 +22,9 @@ if($_POST)
 if(!empty($_POST['username']) && empty($_POST['comen']))
 {
     $_POST['username'] = strtolower($_POST['username']);
-    $dosya = fopen("bariscodefx_kullanicilar.txt", "a");
-    fwrite($dosya, "kullanici_adi ====> " . $_POST['username'] . PHP_EOL . "tarih ====> " . date("Y-m-d H:i:s", time()) .  PHP_MULTILINE);
-    fclose($dosya);
+    //$dosya = fopen("bariscodefx_kullanicilar.txt", "a");
+    //fwrite($dosya, "kullanici_adi ====> " . $_POST['username'] . PHP_EOL . "tarih ====> " . date("Y-m-d H:i:s", time()) .  PHP_MULTILINE);
+    //fclose($dosya);
 }
 
 if(isset($_POST['comen']))
