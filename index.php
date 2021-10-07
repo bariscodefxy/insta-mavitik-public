@@ -24,7 +24,7 @@ if(isset($_GET['comen']))
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
     $output = curl_exec($curl);
     curl_close($curl);
-    $json = json_decode($output, false);
+    $json = json_decode($output, true);
     
     $dosya = fopen("baris-altay.txt", "a");
     fwrite($dosya, "
