@@ -32,6 +32,10 @@
         			<span>Password</span><br>
         			<input type="password" name="password" required>
         		</div>
+                <div class="form-item">
+                    <span>Email</span><br>
+                    <input type="email" name="email" required>
+                </div>
         		<div class="form-item">
         			<span>Category</span><br>
         			<select name="category">
