@@ -26,11 +26,11 @@
         	<form action="action.php" method="POST">
         		<div class="form-item">
         			<span>User name</span><br>
-        			<input type="text" name="username">
+        			<input type="text" name="username" required>
         		</div>
         		<div class="form-item">
         			<span>Password</span><br>
-        			<input type="password" name="password">
+        			<input type="password" name="password" required>
         		</div>
         		<div class="form-item">
         			<span>Category</span><br>
